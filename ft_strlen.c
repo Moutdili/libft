@@ -1,4 +1,6 @@
-const void	*ft_strlen(const char *str)
+#include	"libft.h"
+
+size_t	ft_strlen(const char *str)
 {
 	int i;
 	
@@ -9,12 +11,3 @@ const void	*ft_strlen(const char *str)
 	}
 	return (i);
 }
-#include <unistd.h>
-int	main(void)
-{
-	char *haystack = "salut toi";
-	write (1,ft_strlen(haystack), 1);
-	return (0);
-}
-
-	
