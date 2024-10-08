@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: moutdili <moutdili@student.42.fr>          +#+  +:+       +#+        */
+/*   By: moutdili <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/04 03:04:10 by moutdili          #+#    #+#             */
-/*   Updated: 2024/10/04 03:15:12 by moutdili         ###   ########.fr       */
+/*   Created: 2024/10/08 08:52:08 by moutdili          #+#    #+#             */
+/*   Updated: 2024/10/08 08:52:10 by moutdili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"libft.h"
+#include "libft.h"
 
-int	ft_isalnum(int c)
+void ft_lstadd_front(t_list **lst, t_list *new)
 {
-if  ((c >= '0' && c <= '9') || (c >= 'a' && c <= 'z')
-	 || (c >= 'A' && c <= 'Z'))
-	 	return 1;
-	return 0;
+    if (new)
+    {
+        new->next = *lst;
+        *lst = new;
+    }
 }
+
