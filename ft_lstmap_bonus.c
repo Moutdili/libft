@@ -13,8 +13,10 @@
 
 t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-    t_list *mapped_list = NULL;
+    t_list *mapped_list;
     t_list *current_node;
+
+    mapped_list = NULL;
 
     if (!lst || !f)
         return (NULL);
