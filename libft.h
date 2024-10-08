@@ -1,9 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: moutdili <moutdili@student.42lausanne.c    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/04 02:56:49 by moutdili          #+#    #+#             */
+/*   Updated: 2024/10/07 03:15:28 by moutdili         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stddef.h>  // Pour size_t
-# include <stdlib.h>  // Pour malloc, free
-# include <unistd.h>  // Pour write
+# include <stddef.h>
+# include <stdlib.h>
+# include <unistd.h>
+# include <string.h>
+# include <stdio.h>
 
 // Partie 1 - Fonctions Libc
 

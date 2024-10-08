@@ -1,10 +1,24 @@
-void	*memchr(const void *s, int c, size_t n)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: moutdili <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/08 03:29:05 by moutdili          #+#    #+#             */
+/*   Updated: 2024/10/08 03:29:19 by moutdili         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include	"libft.h"
+
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	const unsigned char *p;
+	unsigned char *p;
 	unsigned char cible;
 	size_t i;
 
-	*p = (const unsigned char *)s;
+	p = (unsigned char *)s;
 	cible = (unsigned char)c;
 	i = 0;
 
