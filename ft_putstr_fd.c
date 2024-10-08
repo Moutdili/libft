@@ -6,7 +6,7 @@
 /*   By: moutdili <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 08:51:11 by moutdili          #+#    #+#             */
-/*   Updated: 2024/10/08 08:51:13 by moutdili         ###   ########.fr       */
+/*   Updated: 2024/10/08 12:18:12 by moutdili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_putstr_fd(char *s, int fd)
 {
 	if (!s)
-		return;
+		return ;
 	while (*s)
 	{
 		write(fd, s, 1);

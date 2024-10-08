@@ -6,7 +6,7 @@
 /*   By: moutdili <moutdili@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 03:07:05 by moutdili          #+#    #+#             */
-/*   Updated: 2024/10/07 06:39:53 by moutdili         ###   ########.fr       */
+/*   Updated: 2024/10/08 12:23:48 by moutdili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 char	*ft_strdup(const char *s)
 {
-	size_t i;
-	size_t len;
-    	char *n;
-	
+	size_t	i;
+	size_t	len;
+	char	*n;
+
 	len = 0;
 	while (s[len] != '\0')
 		len++;
