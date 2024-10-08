@@ -1,28 +1,32 @@
-#include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include <string.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: moutdili <moutdili@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/04 02:46:24 by moutdili          #+#    #+#             */
+/*   Updated: 2024/10/07 06:44:46 by moutdili         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int str_len(char const *s1) {
-    int i;
-    
-    i = 0;
-    while(s1[i] != '\0')
-        i++;
-    return i;
-}
+#include	"libft.h"
 
-void copy_string(char *str, char const *s1, char const *s2, int size) {
-    int i;
-    int j;
+void copy_string(char *str, char const *s1, char const *s2, size_t size) 
+{ 
+	size_t i;
+    	size_t j;
 
-    i = 0;
-    j = 0;
-    while(i <= size) {
-        if (i < str_len(s1)){
+    	i = 0;
+    	j = 0;
+    while(i <= size)
+    {
+        if (i < ft_strlen(s1))
+	{
             str[i] = s1[i];
         }
-        else {
+        else 
+	{
             str[i] = s2[j];
             j++;
         }
@@ -30,26 +34,16 @@ void copy_string(char *str, char const *s1, char const *s2, int size) {
     }
 }
 
-char *ft_strjoin(char const *s1, char const *s2) {
-    int result_size;
-    char *result;
+char *ft_strjoin(char const *s1, char const *s2) 
+{    
+	int result_size;
+    	char *result;
 
-    result_size = str_len(s1) + str_len(s2);
+    result_size = ft_strlen(s1) + ft_strlen(s2);
     result = malloc(sizeof(result_size + 1));
     if (!result)
         return NULL;
 
     copy_string(result, s1, s2, result_size);
     return result;
-};
-
-int main() {
-    char *s1 = "bonjour";
-    char *s2 = "bonsoir";
-    char *result;
-
-    result = ft_strjoin(s1, s2);
-    printf("%s\n", result);
-
-    return 0;
-}	
+}
