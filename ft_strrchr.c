@@ -10,18 +10,25 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"libft.h"
+#include "libft.h"
 
-char *ft_strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	const char *lastocc = NULL;
-	while (*s != '\0')
+	char	*lastocc;
+	int		i;
+
+	lastocc = (char *)s;
+	i = ft_strlen(lastocc);
+	while (i >= 0)
 	{
-		if (*s == (char)c)
-		lastocc = s;
-	s++;
+		if ((char)c == lastocc[i])
+		{
+			lastocc += i;
+			return (lastocc);
+		}
+		i--;
 	}
 	if (c == '\0')
-	return (char *)s;
-	return (char *)lastocc;
+		return (lastocc);
+	return (NULL);
 }

@@ -10,40 +10,40 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"libft.h"
+#include "libft.h"
 
-void copy_string(char *str, char const *s1, char const *s2, size_t size) 
-{ 
-	size_t i;
-    	size_t j;
+void	copy_string(char *str, char const *s1, char const *s2, size_t size)
+{
+	size_t	i;
+	size_t	j;
 
-    	i = 0;
-    	j = 0;
-    while(i <= size)
-    {
-        if (i < ft_strlen(s1))
+	i = 0;
+	j = 0;
+	while (i <= size)
 	{
-            str[i] = s1[i];
-        }
-        else 
-	{
-            str[i] = s2[j];
-            j++;
-        }
-        i++;
-    }
+		if (i < ft_strlen(s1))
+		{
+			str[i] = s1[i];
+		}
+		else
+		{
+			str[i] = s2[j];
+			j++;
+		}
+		i++;
+	}
 }
 
-char *ft_strjoin(char const *s1, char const *s2) 
-{    
-	int result_size;
-    	char *result;
+char	*ft_strjoin(char const *s1, char const *s2)
+{
+	char	*result;
+	size_t	result_size;
 
-    result_size = ft_strlen(s1) + ft_strlen(s2);
-    result = malloc(sizeof(result_size + 1));
-    if (!result)
-        return NULL;
-
-    copy_string(result, s1, s2, result_size);
-    return result;
+	result_size = ft_strlen(s1) + ft_strlen(s2);
+	result = (char *)malloc(sizeof(char) * (result_size + 1));
+	if (!result)
+		return (NULL);
+	copy_string(result, s1, s2, result_size);
+	result[result_size] = '\0';
+	return (result);
 }

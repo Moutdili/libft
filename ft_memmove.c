@@ -10,23 +10,26 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"libft.h"
+#include "libft.h"
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	unsigned char		*p;
 	const unsigned char	*s;
-	size_t				i;
 
-	i = 0;
 	p = (unsigned char *)dest;
 	s = (const unsigned char *)src;
-	if (!dest || !src)
+	if (!p && !s)
 		return (NULL);
-	while (s[i] && i < n)
+	if (p < s)
+		return (ft_memcpy(dest, src, n));
+	else
 	{
-		p[i] = s[i];
-		i++;
+		while (0 < n)
+		{
+			p[n - 1] = s[n - 1];
+			n--;
+		}
 	}
 	return (p);
 }

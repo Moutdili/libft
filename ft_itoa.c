@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"libft.h"
+#include "libft.h"
 
 static size_t	num_len(int n)
 {
@@ -29,27 +29,29 @@ static size_t	num_len(int n)
 
 char	*ft_itoa(int n)
 {
+	int		len;
+	long	sign;
 	char	*str;
-	size_t	len;
-	long	num;
 
-	num = n;
-	len = num_len(n);
-	str = (char *)malloc(sizeof(char) * (len + 1));
+	sign = 0;
+	if (n < 0)
+	{
+		sign = 1;
+		n = -n;
+	}
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
+	len = num_len(n) + sign;
+	str = malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return (NULL);
-	str[len--] = '\0';
-	if (num == 0)
-		str[0] = '\0';
-	if (num < 0)
+	str[len] = '\0';
+	while (len-- > sign)
 	{
+		str[len] = n % 10 + '0';
+		n /= 10;
+	}
+	if (sign)
 		str[0] = '-';
-		num = -num;
-	}
-	while (num)
-	{
-		str[len--] = num % 10 + '0';
-		num /= 10;
-	}
 	return (str);
 }

@@ -17,7 +17,6 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <string.h>
-# include <stdio.h>
 
 // Partie 1 - Fonctions Libc
 int		ft_isalpha(int c);
@@ -57,10 +56,10 @@ void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 
 // Bonus	
-typedef	struct	s_list
+typedef struct s_list
 {
 	void			*content;
-	struct	s_list	*next;
+	struct s_list	*next;
 }	t_list;
 
 t_list	*ft_lstnew(void *content);
